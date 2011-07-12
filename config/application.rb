@@ -39,12 +39,12 @@ module HerokuPdf3
     # Configure sensitive parameters which will be filtered from the log file.
     config.filter_parameters += [:password]
 
-config.after_initialize do
-    ActionController::Base.asset_host = Proc.new do |source, request|
-      if request.format == 'pdf'
-        "file://#{Rails.root.join('public')}"
-      end
-    end
-  end
+	config.after_initialize do
+    	ActionController::Base.asset_host = Proc.new do |source, request|
+     		if request.format == 'pdf'
+        		"file://#{Rails.root.join('public')}"
+     	 	end
+   	 	end
+  	end
   end
 end

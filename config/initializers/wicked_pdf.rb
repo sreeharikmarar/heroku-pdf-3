@@ -11,7 +11,8 @@ require 'wicked_pdf_tempfile'
 
 class WickedPdf
   @@config = {
-  	:exe_path => "/usr/local/bin/wkhtmltopdf"
+#  	:exe_path => "/usr/local/bin/wkhtmltopdf"
+  	:exe_path => Rails.root.join('bin', 'wkhtmltopdf-amd64').to_s
   }
   cattr_accessor :config
 
